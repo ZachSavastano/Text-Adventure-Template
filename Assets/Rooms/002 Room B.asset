@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1008376a5a50a4d93db88b10995036, type: 3}
+  m_Name: 002 Room B
+  m_EditorClassIdentifier: 
+  roomImage: {fileID: 0}
+  roomImageFadeIn: 0
+  storyText: You are in the second room. You can go back or forward.
+  devNotes: Here you can place notes about the story beat above.
+  exits:
+  - {fileID: 11400000, guid: 5d6aff5ef0c9c3d44a3c37849b31630e, type: 2}
+  - {fileID: 11400000, guid: 80626d5863fcc244091ce5ab5eaac4c7, type: 2}
+  exitPaths: []
+  exitWords: []
