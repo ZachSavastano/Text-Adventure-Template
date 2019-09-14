@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomImage: {fileID: 0}
   roomImageFadeIn: 0
-  storyText: You are in the third room.
+  storyText: You are in the third room. You can only go back.
   devNotes: Here you can place notes about the story beat above.
-  exits:
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 54bde58129d57e547b6c75f24e0615fd, type: 2}
-  exitPaths: []
-  exitWords: []
+  exitPaths:
+  - connectingRoom: {fileID: 11400000, guid: 54bde58129d57e547b6c75f24e0615fd, type: 2}
+    exitKeywords:
+    - back
+    exitDescription: 

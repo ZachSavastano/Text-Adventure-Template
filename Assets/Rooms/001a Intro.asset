@@ -14,15 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomImage: {fileID: 0}
   roomImageFadeIn: 0
-  storyText: 'This is the game''s intro. List the directions.
+  storyText: 'You need to go to the first room.
+
+
+
+
 
 
     At any point in time, push "Q" to quit the game.'
   devNotes: Here you can place notes about the story beat above.
-  exits:
-  - {fileID: 11400000, guid: 80626d5863fcc244091ce5ab5eaac4c7, type: 2}
   exitPaths:
-  - {fileID: 0}
-  exitWords:
-  - go
-  - onward
+  - connectingRoom: {fileID: 11400000, guid: 80626d5863fcc244091ce5ab5eaac4c7, type: 2}
+    exitKeywords:
+    - go
+    - first
+    - continue
+    - proceed
+    - one
+    - forward
+    exitDescription: 

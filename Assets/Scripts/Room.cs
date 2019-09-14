@@ -11,21 +11,18 @@ public class Room : ScriptableObject
     public Sprite roomImage;
     public bool roomImageFadeIn;
 
-    [TextArea(1,10)] [SerializeField] string storyText; //Room description
-    [TextArea(1,10)] [SerializeField] string devNotes; //Developer notes on room
+    [TextArea(1,10)] public string storyText; //Room description
+    [TextArea(1,10)] [SerializeField] public string devNotes; //Developer notes on room
     
-    [SerializeField] Room[] exits;
+    //[SerializeField] Room[] exits;
     
-    //public ExitCollapsable[] exitPaths;
-    public Room[] exitPaths;
+    public ExitCollapsable[] exitPaths;
     
-    public bool colorIsRandom = true; //test\
-    public int numImportant = 1;
+    //public Room[] exitPaths;
+        
+    //public string[] exitWords = {"go","onward"};
     
-    
-    public string[] exitWords = {"go","onward"};
-    
-    
+
     public void Update() //Trying to get roomImage to appear on room change
     {
          GameObject go = new GameObject("Test");
@@ -39,38 +36,34 @@ public class Room : ScriptableObject
         return storyText;
     }
     
-     public Room[] GetNextRooms()
-    {
-        return exits;
-    }
     
+    //public Room[] GetNextRooms()
+    //{
+    //    return exits;
+    //}
     
     
     /*
-    public ExitCollapsable[] GetExits()
+    public ExitCollapsable[] GetNextRooms()
     {
         return exitPaths;
     }
     */
-    
-    
-    
-    
 }
 
 [System.Serializable]
 public class ExitCollapsable : System.Object
 {
-    //public string keyString;
     public Room connectingRoom;
     public string[] exitKeywords;
 	[TextArea(1,10)] public string exitDescription;
     
     /*
-    public ExitCollapsable[] GetExits()
+    public ExitCollapsable[] GetNextRooms()
     {
-        return Room.exitPaths;
-    }
+        return exitPaths;
+    }    
     */
+    
 }
 

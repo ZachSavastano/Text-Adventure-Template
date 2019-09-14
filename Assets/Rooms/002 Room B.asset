@@ -16,8 +16,15 @@ MonoBehaviour:
   roomImageFadeIn: 0
   storyText: You are in the second room. You can go back or forward.
   devNotes: Here you can place notes about the story beat above.
-  exits:
-  - {fileID: 11400000, guid: 5d6aff5ef0c9c3d44a3c37849b31630e, type: 2}
-  - {fileID: 11400000, guid: 80626d5863fcc244091ce5ab5eaac4c7, type: 2}
-  exitPaths: []
-  exitWords: []
+  exitPaths:
+  - connectingRoom: {fileID: 11400000, guid: 5d6aff5ef0c9c3d44a3c37849b31630e, type: 2}
+    exitKeywords:
+    - go
+    - continue
+    - forward
+    - proceed
+    exitDescription: 
+  - connectingRoom: {fileID: 11400000, guid: 80626d5863fcc244091ce5ab5eaac4c7, type: 2}
+    exitKeywords:
+    - back
+    exitDescription: 

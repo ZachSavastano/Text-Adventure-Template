@@ -12,46 +12,34 @@ public class UserInput : MonoBehaviour
     public GameObject gameManager;
     
     public Room currentRoom;
-
-    string[] keyWords  = {"forward","continue"};
-    string[] keyWords2 = {"back","go back"};
-    
-    void start()
-    {
-        if (currentRoom.numImportant == 1) 
-            {
-                Debug.Log("Success");
-            } 
-            
-        keyWords = currentRoom.exitWords;
-        //keyWords = Resources.Load<Script>(Room);
-    }
     
     public void CheckTextEntry() // This is called by the inputField gameObject
     {  
-        if(keyWords.Any(InputText.GetComponent<Text>().text.ToLower().Contains)) //ToLower() makes input case-insensitive
-        //if (InputText.GetComponent<Text>().text.ToLower().Contains(keyWord)) //ToLower() makes input case-insensitive
+        //if (InputText.GetComponent<Text>().text.ToLower().Contains(keyWord)) //Old if statement
+        
+        if ((gameManager.GetComponent<AdventureGame>().state.exitPaths.Length > 0) && (currentRoom.exitPaths[0].exitKeywords.Any(InputText.GetComponent<Text>().text.ToLower().Contains)))
         {
             Debug.Log("Headed In Direction 1");
             gameManager.GetComponent<AdventureGame>().ChooseOptionA();
         }
         
-        else if(keyWords2.Any(InputText.GetComponent<Text>().text.ToLower().Contains))
+        if ((gameManager.GetComponent<AdventureGame>().state.exitPaths.Length > 1) && (currentRoom.exitPaths[1].exitKeywords.Any(InputText.GetComponent<Text>().text.ToLower().Contains)))
         {
             Debug.Log("Headed In Direction 2");
             gameManager.GetComponent<AdventureGame>().ChooseOptionB();
         }
         
-    /*
-        if(keyWords.Any(InputText.GetComponent<Text>().text.ToLower().Contains)) //ToLower() makes input case-insensitive
-        //if (InputText.GetComponent<Text>().text.ToLower().Contains(keyWord)) //ToLower() makes input case-insensitive
+        if ((gameManager.GetComponent<AdventureGame>().state.exitPaths.Length > 2) && (currentRoom.exitPaths[2].exitKeywords.Any(InputText.GetComponent<Text>().text.ToLower().Contains)))
         {
-            Debug.Log("Success!");
-            gameManager.GetComponent<AdventureGame>().ChangeRooms();
-        }
-    */ 
+            Debug.Log("Headed In Direction 3");
+            gameManager.GetComponent<AdventureGame>().ChooseOptionC();
+        }  
         
-
+        else
+        {}
+        
+        //(currentRoom.exitPaths.Length > 2)
+        
         inputField.ActivateInputField (); //Re-activates the input field for typing	
         inputField.text = null; //Blanks out the field for the next input
     }

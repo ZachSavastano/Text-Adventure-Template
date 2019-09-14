@@ -16,9 +16,11 @@ MonoBehaviour:
   roomImageFadeIn: 0
   storyText: You are in the first room. You can only proceed forward.
   devNotes: Here you can place notes about the story beat above.
-  exits:
-  - {fileID: 11400000, guid: 54bde58129d57e547b6c75f24e0615fd, type: 2}
-  exitPaths: []
-  exitWords:
-  - go
-  - onward
+  exitPaths:
+  - connectingRoom: {fileID: 11400000, guid: 54bde58129d57e547b6c75f24e0615fd, type: 2}
+    exitKeywords:
+    - go
+    - continue
+    - forward
+    - proceed
+    exitDescription: 
